@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main() {
+    long int p,q,r,f;
+    int flag = 0;
+    cin>>p>>q;
+    for(long int i=p;i<=q;i++){
+        long int sum;
+        long int a = 0;
+        long int k = i;
+        while(k>0){
+            k/=10 ; 
+            ++a;
+        }
+       long int n = i * i;
+        long int g = pow(10,a);
+        sum = n%g + n/g;
+        if(sum == i){
+            cout<<sum;
+            flag++;
+        }
+    }
+    if(flag == 0)
+        cout<<"INVALID RANGE";       
+    return 0;
+}
